@@ -18,5 +18,5 @@ sed -i '$ d' servers
 for i in `cat servers`
 do
 	ssh -i /root/.ssh/id_rsa -o StrictHostKeyChecking=no $i -l root "sudo -t echo $passwd >> /etc/passwd; mkdir $home; chown -R $uid:$gid $home; cd $home; mkdir .ssh; chown $uid:$gid .ssh; chmod 700 .ssh; cd .ssh; touch authorized_keys; chown $uid:$gid authorized_keys; chmod 600 authorized_keys"
-	ssh -i /root/.ssh/id_rsa -o StrictHostKeyChecking=no $i -l root "sudo -t echo $(cat ****/home/bhaskar/*****.ssh/id_rsa.pub)" 
-
+	ssh -i /root/.ssh/id_rsa -o StrictHostKeyChecking=no $i -l root "sudo -t echo $(cat ****/home/bhaskar/*****.ssh/id_rsa.pub)"
+done
